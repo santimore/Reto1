@@ -14,6 +14,7 @@ public class Ej1 {
 		int plancha;
 		double gastoGrupo = 0;
 		
+		System.out.println("Bienvenido");
 		System.out.println("¿Cuantas personas se van a registrar? ");
 		registro=sc.nextInt();
 		while(registro<0) {
