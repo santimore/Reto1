@@ -54,6 +54,10 @@ public class Ej1 {
 					case 1:
 						System.out.println("¿Cuantos kilometros has recorrido? ");
 						km=sc.nextDouble();
+						if(km<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							km=sc.nextDouble();
+						}
 						gasto=0.21*km;
 						gastoPersona = gastoPersona + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
@@ -61,6 +65,10 @@ public class Ej1 {
 					case 2: 
 						System.out.println("¿Cuantos kilometros has recorrido? ");
 						km=sc.nextDouble();
+						if(km<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							km=sc.nextDouble();
+						}
 						gasto=0.10*km;
 						gastoPersona = gastoPersona + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
@@ -68,6 +76,10 @@ public class Ej1 {
 					case 3:
 						System.out.println("¿Cuantos kilometros has recorrido? ");
 						km=sc.nextDouble();
+						if(km<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							km=sc.nextDouble();
+						}
 						gasto=0*km;
 						gastoPersona = gastoPersona + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
@@ -95,6 +107,10 @@ public class Ej1 {
 					case 5: 
 						System.out.println("¿Cuantas horas has utilizado el ordendor? ");
 						uso=sc.nextDouble();
+						if(uso<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							uso=sc.nextDouble();
+						}
 						gasto=0.08*uso;
 						gastoPersona = gastoPersona + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
@@ -102,6 +118,11 @@ public class Ej1 {
 					case 6:
 						System.out.println("¿Cuantas horas has utilizado el ordendor? ");
 						uso=sc.nextDouble();
+						if(uso<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							km=sc.nextDouble();
+						}
+						
 						gasto=0.02*uso;
 						gastoPersona = gastoPersona + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
