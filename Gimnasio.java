@@ -8,7 +8,8 @@ public class Gimnasio {
 		// TODO Auto-generated method
 
 		Scanner sc = new Scanner(System.in);
-		int usuariosRegistrados, usuario = 1, diasAcudidos, minutos = 0, numeros = 1, minutosTotal = 0, recoger = 0, maxMinutos = 0, maxUsuario = 0, granTotalMinutos = 0, granTotalDias = 0;
+		int usuariosRegistrados, usuario = 1, diasAcudidos, minutos = 0, numeros = 1, minutosTotal = 0, recoger = 0,
+				maxMinutos = 0, maxUsuario = 0, granTotalMinutos = 0, granTotalDias = 0;
 		double media;
 
 		System.out.println("¿Cuantos usuarios se van a registrar?");
@@ -32,7 +33,6 @@ public class Gimnasio {
 				diasAcudidos = sc.nextInt();
 			}
 
-
 			for (int d = 0; d < diasAcudidos; d++) {
 				System.out.println("Introduzca el numero de minutos realizado de ejercicios ");
 				System.out.println("Dia " + numeros + ": ");
@@ -44,14 +44,13 @@ public class Gimnasio {
 					minutos = sc.nextInt();
 				}
 
-
 				if (minutos > 60) {
 					recoger++;
 				}
 
 				minutosTotal += minutos;
 
-				numeros ++;
+				numeros++;
 
 				if (numeros > diasAcudidos) {
 					numeros = 1;
@@ -61,8 +60,7 @@ public class Gimnasio {
 
 			media = (double) minutosTotal / diasAcudidos;
 
-
-			System.out.println("--- Usuario " + usuario + " ---");
+			System.out.println("*** Usuario " + usuario + " ***");
 			System.out.println("Minutos totales en la semana: " + minutosTotal);
 			System.out.println("Media de minutos por dia: " + media);
 			System.out.println("Dias con mas de 60 minutos de ejercicio: " + recoger);
@@ -71,13 +69,13 @@ public class Gimnasio {
 				System.out.println("Enhorabuena, has alcanzado el objetivo semanal. Felicidades.");
 			}
 
-			if (usuario==1) {
+			if (usuario == 1) {
 				maxMinutos = minutosTotal;
 				maxUsuario = usuario;
 
 			}
 
-			if(minutosTotal > maxMinutos) {
+			if (minutosTotal > maxMinutos) {
 				maxMinutos = minutosTotal;
 				maxUsuario = usuario;
 			}
@@ -85,16 +83,18 @@ public class Gimnasio {
 			granTotalMinutos += minutosTotal;
 			granTotalDias += diasAcudidos;
 
-			usuario ++;
-
+			usuario++;
 
 		}
 		System.out.println("\n*****************************************************");
-		System.out.println("El usuario que realizo mas minutos de ejercicio es el " + maxUsuario + " con " + maxMinutos + " minutos.");
+		System.out.println("El usuario que realizo mas minutos de ejercicio es el " + maxUsuario + " con " + maxMinutos
+				+ " minutos.");
 		System.out.println("Total de minutos realizados entre todos los usuarios: " + granTotalMinutos);
 		System.out.println("Total de dias de entrenamiento registrados: " + granTotalDias);
 		System.out.println("\n*****************************************************");
-
+		
+		sc.close();
 	}
+	
 
 }
