@@ -14,10 +14,19 @@ public class Ej1 {
 		int plancha;
 		double gastoGrupo = 0;
 		
+		double gastoCoche = 0;
+		double gastoAutobus = 0;
+		double gastoBicicleta = 0;
+		double gastoPlancha = 0;
+		double gastoOrdenador = 0;
+		double gastoMovil = 0;
+		double gastoDucha = 0;
+		double gastoCalefaccion = 0;
+		
 		System.out.println("Bienvenido");
 		System.out.println("¿Cuantas personas se van a registrar? ");
 		registro=sc.nextInt();
-		while(registro<0) {
+		while(registro<=0) {
 			System.out.println("Error! El numero debe ser positivo");
 			System.out.println("¿Cuantas personas se van a registrar? ");
 			registro=sc.nextInt();
@@ -42,9 +51,11 @@ public class Ej1 {
 				System.out.println("5- Uso del ordenador");
 				System.out.println("6- Uso del movil");
 				System.out.println("7- Finalizar actividades del dia"); 
+				System.out.println("8- Uso de ducha");
+				System.out.println("9- Uso de calefaccion");
 				System.out.println("¿Cual quieres elegir? ");
 				opcion=sc.nextInt();
-				while(opcion <=0 || opcion>7) {
+				while(opcion <=0 || opcion>9) {
 					System.out.println("Error! No se puede elegir ese numero ");
 					System.out.println("¿Cual quieres elegir? ");
 					opcion=sc.nextInt();
@@ -52,36 +63,39 @@ public class Ej1 {
 				
 				switch(opcion) {
 					case 1:
-						System.out.println("¿Cuantos kilometros has recorrido? ");
+						System.out.println("¿Cuantos kilometros has recorrido en coche? ");
 						km=sc.nextDouble();
-						if(km<0) {
+						while(km<0) {
 							System.out.println("Error! El numero debe ser positivo");
 							km=sc.nextDouble();
 						}
 						gasto=0.21*km;
 						gastoPersona = gastoPersona + gasto;
+						gastoCoche = gastoCoche + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
 						break;
 					case 2: 
-						System.out.println("¿Cuantos kilometros has recorrido? ");
+						System.out.println("¿Cuantos kilometros has recorrido en autobus? ");
 						km=sc.nextDouble();
-						if(km<0) {
+						while(km<0) {
 							System.out.println("Error! El numero debe ser positivo");
 							km=sc.nextDouble();
 						}
 						gasto=0.10*km;
 						gastoPersona = gastoPersona + gasto;
+						gastoAutobus = gastoAutobus + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
 						break;
 					case 3:
-						System.out.println("¿Cuantos kilometros has recorrido? ");
+						System.out.println("¿Cuantos kilometros has recorrido en bicicleta? ");
 						km=sc.nextDouble();
-						if(km<0) {
+						while(km<0) {
 							System.out.println("Error! El numero debe ser positivo");
 							km=sc.nextDouble();
 						}
 						gasto=0*km;
 						gastoPersona = gastoPersona + gasto;
+						gastoBicicleta = gastoBicicleta + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
 						break;
 					case 4:
@@ -94,10 +108,15 @@ public class Ej1 {
 						}
 						if(plancha == 1 || plancha == 0) {
 							if(plancha == 1) {
-								System.out.println("¿Cuantas horas lo has utilizado? ");
+								System.out.println("¿Cuantas horas has utilizado la plancha? ");
 								uso=sc.nextDouble();
+								while(uso<0) {
+								    System.out.println("Error! El numero debe ser positivo");
+								    uso=sc.nextDouble();
+								} 
 								gasto=0.7*uso;
 								gastoPersona = gastoPersona + gasto;
+								gastoPlancha = gastoPlancha + gasto;
 								System.out.println("El consumo de CO2 es: "+ gasto);
 							}
 						}
@@ -107,29 +126,57 @@ public class Ej1 {
 					case 5: 
 						System.out.println("¿Cuantas horas has utilizado el ordendor? ");
 						uso=sc.nextDouble();
-						if(uso<0) {
+						while(uso<0) {
 							System.out.println("Error! El numero debe ser positivo");
 							uso=sc.nextDouble();
 						}
 						gasto=0.08*uso;
 						gastoPersona = gastoPersona + gasto;
+						gastoOrdenador = gastoOrdenador + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
 						break;
 					case 6:
-						System.out.println("¿Cuantas horas has utilizado el ordendor? ");
+						System.out.println("¿Cuantas horas has utilizado el movil? ");
 						uso=sc.nextDouble();
-						if(uso<0) {
+						while(uso<0) {
 							System.out.println("Error! El numero debe ser positivo");
-							km=sc.nextDouble();
+							uso=sc.nextDouble();
 						}
 						
 						gasto=0.02*uso;
 						gastoPersona = gastoPersona + gasto;
+						gastoMovil = gastoMovil + gasto;
 						System.out.println("El consumo de CO2 es: " + gasto);
 						break;
 					case 7:
 						 
-						 break;							
+						 break;	
+					case 8: 
+						System.out.println("Cuantas horas has usado la ducha? ");
+						uso=sc.nextDouble();
+						while(uso<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							uso=sc.nextDouble();
+						}
+						
+						gasto=0.05*uso;
+						gastoPersona = gastoPersona + gasto;
+						gastoDucha = gastoDucha + gasto;
+						System.out.println("El consumo de CO2 es: " + gasto);
+						break;
+					case 9:
+						System.out.println("Cuantas horas has usado la calefaccion? ");
+						uso=sc.nextDouble();
+						while(uso<0) {
+							System.out.println("Error! El numero debe ser positivo");
+							uso=sc.nextDouble();
+						}
+						
+						gasto=0.011*uso;
+						gastoPersona = gastoPersona + gasto;
+						gastoCalefaccion = gastoCalefaccion + gasto;
+						System.out.println("El consumo de CO2 es: " + gasto);
+						break;
 				}
 			}while(opcion!=7);
 			System.out.println("El consumo de " + nombre + " " + apellido + " es: " + gastoPersona + " kg de CO2");
@@ -138,6 +185,48 @@ public class Ej1 {
 		
 		System.out.println("El consumo total del grupo es: " + gastoGrupo + " kg de CO2");
 		
+		double gastoMayor = gastoCoche;
+		String actividadMayor = "Coche";
+
+		if(gastoAutobus > gastoMayor) {
+			gastoMayor = gastoAutobus;
+			actividadMayor = "Autobus";
+		}
+
+		if(gastoBicicleta > gastoMayor) {
+			gastoMayor = gastoBicicleta;
+			actividadMayor = "Bicicleta";
+		}
+
+		if(gastoPlancha > gastoMayor) {
+			gastoMayor = gastoPlancha;
+			actividadMayor = "Plancha";
+		}
+
+		if(gastoOrdenador > gastoMayor) {
+			gastoMayor = gastoOrdenador;
+			actividadMayor = "Ordenador";
+		}
+
+		if(gastoMovil > gastoMayor) {
+			gastoMayor = gastoMovil;
+			actividadMayor = "Movil";
+		}
+
+		if(gastoDucha > gastoMayor) {
+			gastoMayor = gastoDucha;
+			actividadMayor = "Ducha";
+		}
+
+		if(gastoCalefaccion > gastoMayor) {
+			gastoMayor = gastoCalefaccion;
+			actividadMayor = "Calefaccion";
+		}
+
+		System.out.println("La actividad que mas contribuye es: " + actividadMayor);
+		System.out.println("El gasto de esta actividad es: " + gastoMayor + " kg de CO2");
+
+		System.out.println("El mayor margen de mejora esta en reducir el uso de " + actividadMayor);
 		
 		sc.close();
 	}
