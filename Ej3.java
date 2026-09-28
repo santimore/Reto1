@@ -24,7 +24,7 @@ public class Ej3 {
 		}
 		System.out.println("Introduce el mes actual: ");
 		mesActual = sc.nextInt();
-		while (mesActual < 0 || mesActual > 12) {
+		while (mesActual < 1 || mesActual > 12) {
 			System.out.println("Error! Introduce el mes actual");
 			mesActual = sc.nextInt();
 		}
@@ -34,8 +34,13 @@ public class Ej3 {
 
 		if (mesActual == 2) {
 			if (anioActual % 4 == 0) {
-				while (diaActual <= 0 || diaActual > 28) {
+				while (diaActual <= 0 || diaActual > 29) {
 					System.out.println("Error! Introduzca un dia valido:");
+					diaActual = sc.nextInt();
+				}
+			}else {
+				while (diaActual <= 0 || diaActual > 28) {
+					System.out.println("Error! Introduzca un dia valido: ");
 					diaActual = sc.nextInt();
 				}
 			}
@@ -66,13 +71,13 @@ public class Ej3 {
 
 					System.out.println("Introduce el ultimo año de la revision: ");
 					anioRevision = sc.nextInt();
-					while (anioRevision <= 0 || anioRevision >=2026) {
+					while (anioRevision <= 0 || anioRevision > anioActual) {
 						System.out.println("Error! Introduce el año de la revision:");
 						anioRevision = sc.nextInt();
 					}
 					System.out.println("Introduce el ultimo mes de la revision: ");
 					mesRevision = sc.nextInt();
-					while (mesRevision < 0 || mesRevision > 12) {
+					while (mesRevision < 1 || mesRevision > 12) {
 						System.out.println("Error! Introduce el mes de la revision: ");
 						mesRevision = sc.nextInt();
 					}
@@ -81,8 +86,13 @@ public class Ej3 {
 					diaRevision = sc.nextInt();
 					if (mesRevision == 2) {
 						if (anioRevision % 4 == 0) {
-							while (diaRevision <= 0 || diaRevision > 28) {
+							while (diaRevision <= 0 || diaRevision > 29) {
 								System.out.println("Error! Introduzca un dia valido:");
+								diaRevision = sc.nextInt();
+							}
+						}else {
+							while (diaRevision <= 0 || diaRevision > 28) {
+								System.out.println("Error! Introduzca un dia valido: ");
 								diaRevision = sc.nextInt();
 							}
 						}
@@ -103,14 +113,48 @@ public class Ej3 {
 
 						System.out.println("Error! La fecha de revision no puede ser posterior a la fecha actual.");
 
-						System.out.println("Introduce el ultimo año de la revision: ");
-						anioRevision = sc.nextInt();
+						 System.out.println("Introduce el ultimo año de la revision: ");
+						    anioRevision = sc.nextInt();
 
-						System.out.println("Introduce el ultimo mes de la revision: ");
-						mesRevision = sc.nextInt();
+						    while (anioRevision <= 0 || anioRevision > anioActual) {
+						        System.out.println("Error! Introduce un año valido: ");
+						        anioRevision = sc.nextInt();
+						    }
 
-						System.out.println("Introduce el ultimo dia de la revision: ");
-						diaRevision = sc.nextInt();
+						    System.out.println("Introduce el ultimo mes de la revision: ");
+						    mesRevision = sc.nextInt();
+
+						    while (mesRevision < 1 || mesRevision > 12) {
+						        System.out.println("Error! Introduce un mes valido: ");
+						        mesRevision = sc.nextInt();
+						    }
+
+						    System.out.println("Introduce el ultimo dia de la revision: ");
+						    diaRevision = sc.nextInt();
+
+						    if (mesRevision == 2) {
+								if (anioRevision % 4 == 0) {
+									while (diaRevision <= 0 || diaRevision > 29) {
+										System.out.println("Error! Introduzca un dia valido:");
+										diaRevision = sc.nextInt();
+									}
+								}else {
+									while (diaRevision <= 0 || diaRevision > 28) {
+										System.out.println("Error! Introduzca un dia valido: ");
+										diaRevision = sc.nextInt();
+									}
+								}
+							} else if (mesRevision == 4 || mesRevision == 6 || mesRevision == 9 || mesRevision == 11) {
+								while (diaRevision <= 0 || diaRevision > 30) {
+									System.out.println("Error! Introduzca un dia valido:");
+									diaRevision = sc.nextInt();
+								}
+							} else {
+								while (diaRevision <= 0 || diaRevision > 31) {
+									System.out.println("Error! Introduzca un dia valido:");
+									diaRevision = sc.nextInt();
+								}
+							}
 					}
 
 					if (anioActual - anioRevision > 1) {
@@ -121,7 +165,7 @@ public class Ej3 {
 							System.out.println("Esta bicicleta necesita revision");
 							contRe++;
 						} else if (mesActual == mesRevision && diaActual > diaRevision) {
-							System.out.println("Esta bicileta necesita revision");
+							System.out.println("Esta bicicleta necesita revision");
 							contRe++;
 						} else {
 							System.out.println("Esta bicicleta no necesita revision");
