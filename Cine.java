@@ -53,10 +53,6 @@ public class Cine {
 
 			}
 			System.out.println("*****************************************************");
-			if (cont == 1) {
-				mejorcliente = 1;
-				masentradas = total;
-			}
 			if (total > masentradas) {
 				masentradas = total;
 				mejorcliente = cont;

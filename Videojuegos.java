@@ -55,10 +55,6 @@ public class Videojuegos {
 			System.out.println("La puntuacion media del jugador numero " + cont + " es: " + puntostotaljugador / partidas);
 			System.out.println("*********************************");
 
-			if (cont == 1) {
-				mejorjugador = 1;
-				maspuntos = puntostotaljugador;
-			}
 			if (puntostotaljugador > maspuntos) {
 				maspuntos = puntostotaljugador;
 				mejorjugador = cont;
@@ -74,7 +70,6 @@ public class Videojuegos {
 		System.out.println("El total de enemigos derrotados entre todos es: " + derrotadostotal);
 		System.out.println("El jugador con mayor puntuacion es el jugador numero " + mejorjugador + " con " + maspuntos+ " puntos");
 		teclado.close();
-
 	}
 
 }
