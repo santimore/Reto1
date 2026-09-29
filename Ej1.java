@@ -26,10 +26,19 @@ public class Ej1 {
 		System.out.println("Bienvenido");
 		System.out.println("¿Cuantas personas se van a registrar? ");
 		registro=sc.nextInt();
-		while(registro<=0) {
-			System.out.println("Error! El numero debe ser positivo");
-			System.out.println("¿Cuantas personas se van a registrar? ");
-			registro=sc.nextInt();
+		while(!sc.hasNextInt()) {
+			System.out.println("Error! Debes introducir un numero");
+			sc.next(); 
+		}
+		registro = sc.nextInt(); 
+		while(registro <= 0) {
+			System.out.println("Error! El numero debe ser positivo"); 
+			System.out.println("¿Cuantas personas se van a registrar? "); 
+			while(!sc.hasNextInt()) { 
+				System.out.println("Error! Debes introducir un numero"); 
+				sc.next(); 
+			} 
+			registro = sc.nextInt();
 		}
 		
 		
@@ -55,6 +64,12 @@ public class Ej1 {
 				System.out.println("9- Uso de calefaccion");
 				System.out.println("¿Cual quieres elegir? ");
 				opcion=sc.nextInt();
+				while(!sc.hasNextInt()) {
+				    System.out.println("Error! Debes introducir un numero");
+				    sc.next();
+				}
+
+				opcion=sc.nextInt();
 				while(opcion <=0 || opcion>9) {
 					System.out.println("Error! No se puede elegir ese numero ");
 					System.out.println("¿Cual quieres elegir? ");
@@ -65,9 +80,22 @@ public class Ej1 {
 					case 1:
 						System.out.println("¿Cuantos kilometros has recorrido en coche? ");
 						km=sc.nextDouble();
+						while(!sc.hasNextDouble()) {
+						    System.out.println("Error! Debes introducir un numero");
+						    sc.next();
+						}
+
+						km=sc.nextDouble();
+
 						while(km<0) {
-							System.out.println("Error! El numero debe ser positivo");
-							km=sc.nextDouble();
+						    System.out.println("Error! El numero debe ser positivo");
+
+						    while(!sc.hasNextDouble()) {
+						        System.out.println("Error! Debes introducir un numero");
+						        sc.next();
+						    }
+
+						    km=sc.nextDouble();
 						}
 						gasto=0.21*km;
 						gastoPersona = gastoPersona + gasto;
@@ -77,9 +105,22 @@ public class Ej1 {
 					case 2: 
 						System.out.println("¿Cuantos kilometros has recorrido en autobus? ");
 						km=sc.nextDouble();
+						while(!sc.hasNextDouble()) {
+						    System.out.println("Error! Debes introducir un numero");
+						    sc.next();
+						}
+
+						km=sc.nextDouble();
+
 						while(km<0) {
-							System.out.println("Error! El numero debe ser positivo");
-							km=sc.nextDouble();
+						    System.out.println("Error! El numero debe ser positivo");
+
+						    while(!sc.hasNextDouble()) {
+						        System.out.println("Error! Debes introducir un numero");
+						        sc.next();
+						    }
+
+						    km=sc.nextDouble();
 						}
 						gasto=0.10*km;
 						gastoPersona = gastoPersona + gasto;
@@ -89,9 +130,22 @@ public class Ej1 {
 					case 3:
 						System.out.println("¿Cuantos kilometros has recorrido en bicicleta? ");
 						km=sc.nextDouble();
+						while(!sc.hasNextDouble()) {
+						    System.out.println("Error! Debes introducir un numero");
+						    sc.next();
+						}
+
+						km=sc.nextDouble();
+
 						while(km<0) {
-							System.out.println("Error! El numero debe ser positivo");
-							km=sc.nextDouble();
+						    System.out.println("Error! El numero debe ser positivo");
+
+						    while(!sc.hasNextDouble()) {
+						        System.out.println("Error! Debes introducir un numero");
+						        sc.next();
+						    }
+
+						    km=sc.nextDouble();
 						}
 						gasto=0*km;
 						gastoPersona = gastoPersona + gasto;
@@ -101,17 +155,35 @@ public class Ej1 {
 					case 4:
 						System.out.println("Has usado la placha: (1=si, 0=no)");
 						plancha=sc.nextInt();
+						while(!sc.hasNextInt()) {
+							System.out.println("Error! El numero debe ser 1 o 0"); 
+							sc.next(); 
+						} 
+						plancha = sc.nextInt();
+						
 						while(plancha!=1 && plancha!=0) {
 							System.out.println("Error! El numero debe ser 1 o 0 ");
 							System.out.println("Has usado la placha: (1=si, 0=no)");
-							plancha=sc.nextInt();
+							while(!sc.hasNextInt()) {
+								System.out.println("Error! El numero debe ser 1 o 0");
+								sc.next(); 
+							} 
+							plancha = sc.nextInt();
 						}
 						if(plancha == 1 || plancha == 0) {
 							if(plancha == 1) {
 								System.out.println("¿Cuantas horas has utilizado la plancha? ");
+								while(!sc.hasNextDouble()) {
+									System.out.println("Error! Debes introducir un numero"); 
+									sc.next(); 
+								}
 								uso=sc.nextDouble();
 								while(uso<0) {
 								    System.out.println("Error! El numero debe ser positivo");
+								    while(!sc.hasNextDouble()) {
+										System.out.println("Error! Debes introducir un numero"); 
+										sc.next(); 
+									}
 								    uso=sc.nextDouble();
 								} 
 								gasto=0.7*uso;
@@ -125,9 +197,17 @@ public class Ej1 {
 						break;
 					case 5: 
 						System.out.println("¿Cuantas horas has utilizado el ordendor? ");
+						while(!sc.hasNextDouble()) {
+							System.out.println("Error! Debes introducir un numero"); 
+							sc.next(); 
+						}
 						uso=sc.nextDouble();
 						while(uso<0) {
 							System.out.println("Error! El numero debe ser positivo");
+							while(!sc.hasNextDouble()) {
+								System.out.println("Error! Debes introducir un numero"); 
+								sc.next(); 
+							}
 							uso=sc.nextDouble();
 						}
 						gasto=0.08*uso;
@@ -137,9 +217,17 @@ public class Ej1 {
 						break;
 					case 6:
 						System.out.println("¿Cuantas horas has utilizado el movil? ");
+						while(!sc.hasNextDouble()) {
+							System.out.println("Error! Debes introducir un numero"); 
+							sc.next(); 
+						}
 						uso=sc.nextDouble();
 						while(uso<0) {
 							System.out.println("Error! El numero debe ser positivo");
+							while(!sc.hasNextDouble()) {
+								System.out.println("Error! Debes introducir un numero"); 
+								sc.next(); 
+							}
 							uso=sc.nextDouble();
 						}
 						
@@ -153,9 +241,17 @@ public class Ej1 {
 						 break;	
 					case 8: 
 						System.out.println("Cuantas horas has usado la ducha? ");
+						while(!sc.hasNextDouble()) {
+							System.out.println("Error! Debes introducir un numero"); 
+							sc.next(); 
+						}
 						uso=sc.nextDouble();
 						while(uso<0) {
 							System.out.println("Error! El numero debe ser positivo");
+							while(!sc.hasNextDouble()) {
+								System.out.println("Error! Debes introducir un numero"); 
+								sc.next(); 
+							}
 							uso=sc.nextDouble();
 						}
 						
@@ -166,9 +262,17 @@ public class Ej1 {
 						break;
 					case 9:
 						System.out.println("Cuantas horas has usado la calefaccion? ");
+						while(!sc.hasNextDouble()) {
+							System.out.println("Error! Debes introducir un numero"); 
+							sc.next(); 
+						}
 						uso=sc.nextDouble();
 						while(uso<0) {
-							System.out.println("Error! El numero debe ser positivo");
+							
+							while(!sc.hasNextDouble()) {
+								System.out.println("Error! Debes introducir un numero"); 
+								sc.next(); 
+							}System.out.println("Error! El numero debe ser positivo");
 							uso=sc.nextDouble();
 						}
 						
