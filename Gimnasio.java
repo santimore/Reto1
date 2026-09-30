@@ -25,7 +25,7 @@ public class Gimnasio {
 			minutosTotal = 0;
 			recoger = 0;
 
-			System.out.println("¿Numero de dias que ha acudido el usuario " + usuario + " al gimnasio? ");
+			System.out.println("¿Numero de dias que ha acudido el usuario " + usuario + " al gimnasio en la semana? ");
 			diasAcudidos = sc.nextInt();
 			while (diasAcudidos < 0 || diasAcudidos > 7) {
 				System.out.println("ERROR, los dias a registrar no pueden ser menor que 0 y mayor a 7.");
