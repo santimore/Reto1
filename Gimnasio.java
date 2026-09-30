@@ -9,7 +9,7 @@ public class Gimnasio {
 
 		Scanner sc = new Scanner(System.in);
 		int usuariosRegistrados, usuario = 1, diasAcudidos, minutos = 0, numeros = 1, minutosTotal = 0, recoger = 0,
-				maxMinutos = 0, maxUsuario = 0, granTotalMinutos = 0, granTotalDias = 0;
+		maxMinutos = 0, maxUsuario = 0, granTotalMinutos = 0, granTotalDias = 0;
 		double media;
 
 		System.out.println("¿Cuantos usuarios se van a registrar?");
@@ -69,11 +69,7 @@ public class Gimnasio {
 				System.out.println("Enhorabuena, has alcanzado el objetivo semanal. Felicidades.");
 			}
 
-			if (usuario == 1) {
-				maxMinutos = minutosTotal;
-				maxUsuario = usuario;
-
-			}
+			
 
 			if (minutosTotal > maxMinutos) {
 				maxMinutos = minutosTotal;
